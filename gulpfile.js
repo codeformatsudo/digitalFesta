@@ -12,7 +12,7 @@ var changed = require('gulp-changed');
 var cache = require('gulp-cached');
 
 var destDir = 'docs/'; // 出力用ディレクトリ
-var assetsDir = 'base/common/'; // 案件によってcommonとかassetsとかあるんでとりあえず変数にした
+var assetsDir = 'common/'; // 案件によってcommonとかassetsとかあるんでとりあえず変数にした
 
 gulp.task('browser-sync', function () {
 	browserSync({
@@ -68,6 +68,7 @@ gulp.task('copyResource', function () {
 		.pipe(gulp.dest(destDir)) // destDirに出力して、
 		.pipe(browserSync.stream()) // browser-syncで反映させる。
 });
+
 
 // gulp-watchで監視
 // ['browser-sync','copyResource','sass','jsmin']を実行してからdefaultとして内容を実行。
